@@ -61,6 +61,10 @@ export class StudentService {
     this.firestore.collection('students').doc(id).delete();
   }
 
+  public editStudent(student:Student,id:string){
+    this.firestore.collection('students').doc(id).update(student);
+  }
+
   public getStudentByControlNumber(controlnumber: string): Student {
     let item: Student = this.students.find((student)=> {
       return student.controlnumber===controlnumber;

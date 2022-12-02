@@ -50,6 +50,12 @@ export class HomePage {
 
   }
 
+  public editStudent(id:string){
+    this.router.navigate(['/edit-student'], {
+      queryParams: { id: id },
+    });
+  }
+
   public getStudentByControlNumber(id: string): void {
     //console.log(this.studentService.getStudentByControlNumber(cn));
     this.router.navigate(['/view-student'], {
